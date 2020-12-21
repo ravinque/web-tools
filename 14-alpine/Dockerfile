@@ -28,6 +28,11 @@ RUN apk update \
 RUN apk update \
       && apk add --no-cache rng-tools \
       && rm -rf /var/cache/apk/*
+     
+# bash
+RUN apk update \
+      && apk add --no-cache bash \
+      && rm -rf /var/cache/apk/*
 
 # Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
 ENV CHROME_BIN=/usr/bin/chromium-browser \
